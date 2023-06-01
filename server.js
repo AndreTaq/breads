@@ -6,9 +6,12 @@ require('dotenv').config()
 const PORT = process.env.PORT
 console.log(PORT)
 
-//middleware
+//Bread
 const breadsControler = require('./controllers/breads_controller.js')
 app.use('/breads', breadsControler)
+app.set('views', __dirname + '/views')
+app.set('view engine', 'jsx')
+app.engine('jsx', require('express-react-views').createEngine())
 
 //ROUTES
 app.get('/', (req,res) => {
