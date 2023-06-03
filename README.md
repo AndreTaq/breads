@@ -3,7 +3,7 @@
 ## Routes
 
 | Method | Path | Purpose |
-|--------|----------------------------|---------------------------|
+| -------- | ---------------------------- | --------------------------- |
 |GET| `/` | Home page |
 |GET| `/places` | Place index page |
 |POST| `/places` | Create new place |
@@ -15,3 +15,16 @@
 |POST| `/places/:id/rant` | Create a rant (comment) about a particular place |
 |DELETE| `/places/:id/rant/:rantId` | Delete a rant (comment) about a particular place |
 |GET| `*` | 404 page (matches any route not defined above) |
+
+## Database
+
+**Places**
+
+| Firld | Type |
+| ------- | --------- |
+| _id | Object ID |
+| name | string |
+| city | string |
+| state | string |
+| cuisines | string |
+| pic | string |
