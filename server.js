@@ -1,5 +1,7 @@
+// DEPENDENCIES
 const express = require('express')
 const app = express()
+const methodOverride = require('method-override')
 
 // CONFIGURATION
 require('dotenv').config()
@@ -13,6 +15,7 @@ app.get('/', (req,res) => {
 
 //Bread middleware
 const breadsControler = require('./controllers/breads_controller.js')
+app.use(methodOverride('_method'))
 app.use('/breads', breadsControler)
 app.use(express.static('public'))
 app.use(express.urlencoded({extended: true}))
